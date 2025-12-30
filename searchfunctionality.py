@@ -1,10 +1,6 @@
-def search_book(self):
-    # Ask user for books title
-    title = input( "Enter Title or Author:")
-    if not title:
-        return
-    title = title.strip().lower()  #not too sensitive
-    found = False
+def search_book(self , title , book_list):
+    title = title.strip().lower()
+    found = False 
     # Traverse linked list to find matches
     for book in self.book_list.to_list():
         if title in book["Title"].lower() or title in book["Author"].lower():
