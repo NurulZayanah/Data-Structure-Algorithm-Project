@@ -36,3 +36,16 @@ def search_book(self):
             display ="No matching books found."
 
 
+        scrollbar = Scrollbar(window, orient=VERTICAL)
+        text = Text(window, yscrollcommand=scrollbar.set)
+        scrollbar.config(command=text.yview)
+
+        scrollbar.pack(side=RIGHT, fill=Y)
+        text.pack(expand=True, fill="both")
+
+        text.insert(END, display)
+        text.config(state="disabled")
+
+        tk.Button(window, text="Back", command=window.destroy).pack(pady=10)
+        window.bind("<Escape>", lambda e: window.destroy())
+
