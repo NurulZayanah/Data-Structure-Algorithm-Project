@@ -11,12 +11,28 @@ def search_book(self):
     for book in self.book_list.to_list():
         if title in book["Title"].lower() or title in book["Author"].lower():
             results.append(book)
-            print(
-                book["Book_ID"], "|", book["Title"], "|", book["Author"], "|",
-                book["Year"], "|", book["Genre"], "|", "Available:", book["Available"]
-            )
-            found = True
+    window = Toplevel(self.root)
+        window.title("search Results")
+        window.attributes("-fullscreen", False)
+        columns = ("Book_ID", "Title", "Author", "Year", "Genre","Available")
+        tree = ttk.Treeview(window, columns=columns, show="headings")
+        tree.pack(expand=True, fill="both", padx=20)
+        for col in columns:
+            tree.heading(col, text=col)
+            tree.column(col, anchor="center", width=150)
 
-    if not found:
-        print("No matching books found.")
+        if results:
+            for book in results:
+                tree.insert("", "end", values=(
+                    book["Book_ID"],
+                    book["Title"],
+                    book["Author"],
+                    book["Year"],
+                    book["Genre"],
+                    book["Available"]
+                ))
+
+        else:
+            display ="No matching books found."
+
 
