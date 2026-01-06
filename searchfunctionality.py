@@ -1,5 +1,5 @@
 import tkinter as tk 
-from tkinter import simpledialog
+from tkinter import simpledialog,Toplevel,ttk,Scrollbar,VERTICAL,Text,RIGHT,END
 def search_book(self):
     # input book
     title = simpledialog.askstring("Search Book","Enter Title or Author:")
@@ -48,4 +48,5 @@ def search_book(self):
 
         tk.Button(window, text="Back", command=window.destroy).pack(pady=10)
         window.bind("<Escape>", lambda e: window.destroy())
+
 
