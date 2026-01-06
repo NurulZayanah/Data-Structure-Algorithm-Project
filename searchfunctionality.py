@@ -5,7 +5,7 @@ def search_book(self):
     title = simpledialog.askstring("Search Book","Enter Title or Author:")
     if not title:
         return
-    title = title.strip().lower
+    title = title.strip().lower()
     results = []
     # Find matches
     for book in self.book_list.to_list():
@@ -48,5 +48,6 @@ def search_book(self):
 
         tk.Button(window, text="Back", command=window.destroy).pack(pady=10)
         window.bind("<Escape>", lambda e: window.destroy())
+
 
 
