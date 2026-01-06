@@ -88,7 +88,7 @@ class LibrarySystem:
         for widget in self.root.winfo_children():
             widget.destroy()
 
-        #hias
+        #decorate
         self.root.configure(bg="#f0f4f7")
         tk.Label(
        self.root ,
@@ -111,8 +111,6 @@ class LibrarySystem:
         tk.Button(self.root, text="Borrow Book", command=self.borrow_book, **button_style).pack(pady=10)
         tk.Button(self.root, text="Return Book", command=self.return_book , **button_style).pack(pady=10)
         tk.Button(self.root, text="Exit",  command=self.exit_system ,**button_style).pack(pady=10)
-
-    from tkinter import ttk  # Tambah di atas kalau belum ada
 
     def view_books(self):
         window = Toplevel(self.root)
@@ -260,4 +258,5 @@ class LibrarySystem:
 if __name__ == "__main__":
     root = tk.Tk()
     LibrarySystem(root)
+
     root.mainloop()
