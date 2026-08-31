@@ -8,5 +8,7 @@
 
 ### Project Overview
 -Implemented Hash Table for borrow/return logic, Linked Lists for book insertion and deletion, CSV file save/load synchronization, and search functionality with error handling.
+
 -Books are stored using linked list structures. 
+
 -Hash Table is used to quickly find book records.
